@@ -32,7 +32,7 @@ class ConjoinxDate{
         var pickerType : Int = Picker.DATE_TIME) {
 
         fun title(title: String?) = apply { this.title = title }
-        fun dateTime(dateTime: Date?) = apply { this.dateTime = dateTime }
+        fun setdateTime(dateTime: Date?) = apply { this.dateTime = dateTime }
         fun maxDate(maxDate: Date?) = apply { this.maxDate = maxDate }
         fun minDate(minDate: Date?) = apply { this.minDate = minDate }
         fun pickerType(pickerType: Int) = apply { this.pickerType = pickerType }
@@ -43,7 +43,7 @@ class ConjoinxDate{
         {
 
             val builder = AlertDialog.Builder(context)
-            val view = LayoutInflater.from(context). inflate(R.layout.activity_datetime,
+            val view = LayoutInflater.from(context).inflate(R.layout.activity_datetime,
                     null, false)
             builder.setView(view)
             val datePiker: DatePicker = view.findViewById(R.id.datePicker)

@@ -23,17 +23,14 @@ class MainActivity : AppCompatActivity() {
         d.setOnClickListener {
 
             ConjoinxDate.Builder()
-                .title("Choose date of birth")
-                .maxDate(maxDate)
-                .dateTime(myDate)
-                .minDate(miniDate)
-                .pickerType(ConjoinxDate.Picker.DATE)
-                .build(this){
-
-
-
-                    myDate = it!!.toDate(yyyy_MM_DD)
-                    d.text = it
+                .title("Choose date of birth") // optional
+                .maxDate(maxDate) // optional
+                .setdateTime(myDate) // optional
+                .minDate(miniDate) // optional
+                .pickerType(ConjoinxDate.Picker.DATE) // optional (Default is Picker.DATETIME )
+                .build(this){ time -> // In String
+                    myDate = time!!.toDate(yyyy_MM_DD)
+                    d.text = time
                 }
 
 
@@ -44,7 +41,7 @@ class MainActivity : AppCompatActivity() {
 
             ConjoinxDate.Builder()
                 .maxDate(Date())
-                .dateTime(myDate)
+                .setdateTime(myDate)
                 .pickerType(ConjoinxDate.Picker.TIME)
                 .build(this){
                     t.text = it
@@ -58,7 +55,7 @@ class MainActivity : AppCompatActivity() {
 
         b.setOnClickListener {
             ConjoinxDate.Builder() .maxDate(Date())
-                .dateTime(myDate)    .build(this){
+                .setdateTime(myDate)    .build(this){
                     myDate = it!!.toDate()
                     Log.e("Deepak both "," $it ")
                     b.text = it
