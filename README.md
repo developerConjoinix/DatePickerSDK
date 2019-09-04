@@ -12,7 +12,16 @@
 <div>allprojects {</div>
 <div>repositories {</div>
 <div>...</div>
-<div>maven { url 'https://jitpack.io' }</div>
+<div> maven { url 'https://jitpack.io' } </div>
 <div>}</div>
 <div>}</div>
+
+<br/> <br/> <br/>
+
+
+![Optional Text](../master/Screenshot/ad.png)
+![Optional Text](../master/Screenshot/ad1.png)
+![Optional Text](../master/Screenshot/ad2.png)
+
  
+
