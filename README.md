@@ -8,14 +8,14 @@
 <pre><p><strong>Add following lib to your app level Gradle</strong></p>
 <p>dependencies {<br/>implementation 'com.github.developerConjoinix:DatePickerSDK:1.1'<br />}<strong><br /></strong></p></pre>
 <p>&nbsp;</p>
-<p><strong>Add following lib to your project level Gradle</strong></p>
+<pre><p><strong>Add following lib to your project level Gradle</strong></p>
 <div>allprojects {</div>
 <div>repositories {</div>
 <div>...</div>
 <div> maven { url 'https://jitpack.io' } </div>
 <div>}</div>
 <div>}</div>
-
+</pre>
 <br/> <br/> <br/>
 
 
