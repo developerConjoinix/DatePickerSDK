@@ -109,11 +109,47 @@ fun String.timeAgo(format: String = Default): String {
         different < 2 * MINUTE_MILLIS -> "1 minute ago"
         different < 50 * MINUTE_MILLIS -> "${different / MINUTE_MILLIS} minutes ago"
         different < 90 * MINUTE_MILLIS -> "1 hour ago"
-        different < 24 * HOUR_MILLIS -> startDate.toStringDate()
+        different < 24 * HOUR_MILLIS ->"${different / HOUR_MILLIS} hours ago"
         different < 48 * HOUR_MILLIS -> "Yesterday"
         different < 7 * DAY_MILLIS -> "${different / DAY_MILLIS} days ago"
         different < 2 * WEEKS_MILLIS -> "${different / WEEKS_MILLIS} week ago"
         different < 3.5 * WEEKS_MILLIS -> "${different / WEEKS_MILLIS} weeks ago"
         else -> startDate.toStringDate()
+    }
+}
+
+fun  Long.convertToReadable(isWithUnits : Boolean = true) : String {
+    val seconds = this / 1000
+    val minutes = seconds / 60
+    val hours = minutes / 60
+    val days = hours / 24
+
+
+
+    if(isWithUnits){
+        return when {
+            days > 0 -> "$days d : ${hours%24} h"
+            hours > 0 -> "${hours%24} h : ${(minutes%60).correct()} m"
+            minutes > 0 -> "${(minutes%60).correct()} m : ${(seconds%60).correct()} s"
+            else -> "${(seconds%60).correct()} secs"
+        }
+    }
+    return when {
+        days > 0 -> "$days:${hours%24}"
+        hours > 0 -> "${hours%24}:${(minutes%60).correct()}"
+        minutes > 0 -> "${(minutes%60).correct()}:${(seconds%60).correct()}"
+        else -> (seconds%60).correct()
+    }
+
+
+
+}
+
+fun Long.correct() : String {
+
+    return if(this > 9) {
+        "$this"
+    }else{
+        "0$this"
     }
 }
