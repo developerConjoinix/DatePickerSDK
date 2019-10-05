@@ -18,7 +18,7 @@ and many more....
 
 
 <pre><p><strong>Add following lib to your app level Gradle</strong></p>
-<p>dependencies {<br/>implementation 'com.github.developerConjoinix:DatePickerSDK:1.2'<br />}<strong><br /></strong></p></pre>
+<p>dependencies {<br/>implementation 'com.github.developerConjoinix:DatePickerSDK:1.3'<br />}<strong><br /></strong></p></pre>
 <p>&nbsp;</p>
 <pre><p><strong>Add following lib to your project level Gradle</strong></p>
 <div>allprojects {</div>
