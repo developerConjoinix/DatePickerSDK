@@ -11,15 +11,15 @@ import java.util.*
 class MainActivity : AppCompatActivity() {
 
 
-    var myDate : Date? = null
-    var miniDate : Date? = null
-    var maxDate : Date? = null
+    var myDate :    Date? = null
+    var miniDate :  Date? = null
+    var maxDate :  Date? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
+        d.text = "2019-10-5 15:24:55".timeAgo()
+       // Log.e("DDDDDD ", "2019-10-2 12:00:11".timeAgo())
         d.setOnClickListener {
 
             ConjoinxDate.Builder()
